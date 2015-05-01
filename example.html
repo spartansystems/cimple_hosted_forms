@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <title>Example</title>
+    <link rel="stylesheet" href="http://cdn.foundation5.zurb.com/foundation.css" />
+  </head>
+  <body>
+    <h1>Example</h1>
+
+    <div class='row'>
+      <button name="button" type="button" class="button radius small cimple-link" data-token="GENERATED-TOKEN-GOES-HERE" data-path="profile/addPayment">Add Payment Method</button>
+    </div>
+
+    <div id='cimple-hosted-form-modal' class="reveal-modal medium" data-reveal aria-labelledby="cimple-hosted-form-modal" aria-hidden="true" role="dialog">
+      <div id='cimple-hosted-form' class="iframe-container"></div>
+      <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+    </div>
+
+    <script src="cimple_hosted_forms.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="http://cdn.foundation5.zurb.com/foundation.js"></script>
+    <script>
+      $('.cimple-link').click(function(event){
+        var $this = $(this);
+        event.preventDefault();
+        
+        CIMpleHostedForms.hosted_form($this.data('path'), $this.data(), function(){
+          $('#cimple-hosted-form-modal').foundation('reveal', 'open');
+        });
+
+        CIMpleHostedForms.listen('resizeWindow', function(data){
+          $('#cimple-hosted-form,#cimple-hosted-form iframe').css({"width": "600px", "height": data.height+"px", "margin": "auto"});
+        });
+
+        CIMpleHostedForms.listen('cancel', function(data){
+          $('#cimple-hosted-form-modal').foundation('reveal', 'close');
+        });
+
+        CIMpleHostedForms.listen('successfulSave', function(data){
+          document.location.reload(true);
+        });
+      });
+    </script>
+  </body>
+</html>

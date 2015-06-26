@@ -1,7 +1,7 @@
 README
 ======
 
-CIMpleHostedForms is a simple Javascript library designed to make embeding Authorize.net's [CIM hosted form](http://developer.authorize.net/api/reference/starting_guide.html#custInfoManager-hosted) easy.
+CIMpleHostedForms is a simple Javascript library designed to make embedding Authorize.net's [CIM hosted form](http://developer.authorize.net/api/reference/starting_guide.html#custInfoManager-hosted) easy.
 
 Authorize.Net [provides sample code](http://developer.authorize.net/downloads/samplecode/) for displaying the hosted form in a pre-styled modal popup. CIMpleHostedForms makes it simple to embed the hosted form iframe anywhere on a page, not just a modal.
 
@@ -12,9 +12,7 @@ Authorize.Net [provides sample code](http://developer.authorize.net/downloads/sa
 - Add tests
 - Write better documentation
 - Add examples
-- Add license
 
-## Copyright
+## License
 
-Created by Heath Anderson for Spartan.
-Copyright (c) 2015 Spartan
+See the [LICENSE](LICENSE.md) file for license rights and limitations (MIT).
